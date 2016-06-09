@@ -8,6 +8,10 @@ Author: Ryan Pennell
 //Debug
 
 //Modules
-`include "Module.sv"
+`include "ALU.sv"
+`include "Decoder.sv"
+`include "Enabler.sv"
+`include "Mux.sv"
+`include "Reg.sv"
 
 `endif
