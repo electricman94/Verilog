@@ -1,37 +1,44 @@
 /*
 Author: Ryan Pennell
 */
-`ifndef _<Name>_sv_
-`define _<Name>_sv_
+`ifndef _Reg_sv_
+`define _Reg_sv_
 
-module <Name> #(
+module Reg #(
+  parameter WIDTH = 8
 )(
   out,
   in,
   clk,
-  reset,
-  enable
+  reset
 );
-
-  input wire clk, reset, enable;
+  output reg [WIDTH-1:0] out;
+  input wire [WIDTH-1:0] in;
+  input wire clk, reset;
 
   always @ (posedge clk)
   begin
-
+    if (reset)
+      out = {WIDTH{1'b0}};
+    else
+      out = in;
   end
 endmodule
 
 //Testbench
-module <Name>_tb #(
+module Reg_tb #(
+  parameter WIDTH = 8,
 	parameter clock_period = 20  //50 MHz in ns timescale
 )(
 );
 	reg clk, reset, enable;
+  wire [WIDTH-1:0] out;
 
-	<Name> #() dut (
+	Reg #(8) dut (
+    .out												(out),
+    .in												  (8'hAB),
 		.clk												(clk),
-		.reset											(reset),
-		.enable											(enable),
+		.reset											(reset)
   );
 
   initial
@@ -47,7 +54,7 @@ module <Name>_tb #(
 
   initial
   begin
-    $dumpfile("<Name>.vcd");
+    $dumpfile("Reg.vcd");
     $dumpvars(0, dut);
   end
 
@@ -58,15 +65,8 @@ module <Name>_tb #(
 	//BEGIN
     #(clock_period / 2)
       reset = 1'b1;
-      enable = 1'b0;
     #(clock_period * 4);
       reset = 1'b0;
-			enable = 1'b1;
-    for (i = 0; i < countTo; i = i + 1)
-    begin
-    #(clock_period * 2)
-      //doStuff
-    end
     #(clock_period * 4);
 
 	//SIMULATION END

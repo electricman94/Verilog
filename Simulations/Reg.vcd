@@ -1,0 +1,48 @@
+$date
+	Wed Jun  8 20:10:40 2016
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Reg_tb $end
+$scope module dut $end
+$var wire 1 ! clk $end
+$var wire 8 " in [7:0] $end
+$var wire 1 # reset $end
+$var reg 8 $ out [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx $
+x#
+b10101011 "
+0!
+$end
+#10
+1#
+#20
+b0 $
+1!
+#40
+0!
+#60
+1!
+#80
+0!
+#90
+0#
+#100
+b10101011 $
+1!
+#120
+0!
+#140
+1!
+#160
+0!
+#170
