@@ -1,0 +1,270 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1670d20 .scope module, "Decoder_tb" "Decoder_tb" 2 42;
+ .timescale 0 0;
+P_0x1692cd8 .param/l "WIDTH" 2 43, +C4<010000>;
+P_0x1692d00 .param/l "clock_period" 2 44, +C4<010100>;
+P_0x1692d28 .param/l "countTo" 2 75, +C4<010000>;
+v0x16b9710_0 .var "clk", 0 0;
+v0x16b97d0_0 .var "enable", 0 0;
+v0x16b9880_0 .var/i "i", 31 0;
+RS_0x7fe2a88dec48/0/0 .resolv tri, L_0x16b9b20, L_0x16b9ff0, L_0x16ba370, L_0x16ba7b0;
+RS_0x7fe2a88dec48/0/4 .resolv tri, L_0x16bab30, L_0x16baeb0, L_0x16bb2b0, L_0x16bb830;
+RS_0x7fe2a88dec48/0/8 .resolv tri, L_0x16bbc10, L_0x16bbf50, L_0x16bc2b0, L_0x16bc5f0;
+RS_0x7fe2a88dec48/0/12 .resolv tri, L_0x16bc990, L_0x16bcd10, L_0x16bd190, L_0x16bb770;
+RS_0x7fe2a88dec48 .resolv tri, RS_0x7fe2a88dec48/0/0, RS_0x7fe2a88dec48/0/4, RS_0x7fe2a88dec48/0/8, RS_0x7fe2a88dec48/0/12;
+v0x16b9900_0 .net8 "out", 15 0, RS_0x7fe2a88dec48; 16 drivers
+v0x16b99e0_0 .var "reset", 0 0;
+v0x16b9a60_0 .var "sel", 3 0;
+S_0x165c690 .scope module, "dut" "Decoder" 2 51, 2 7, S_0x1670d20;
+ .timescale 0 0;
+P_0x165c788 .param/l "ADDR_SIZE" 2 20, +C4<00000000000000000000000000000100>;
+P_0x165c7b0 .param/l "WIDTH" 2 8, +C4<010000>;
+v0x16b9510_0 .net "enable", 0 0, v0x16b97d0_0; 1 drivers
+v0x16b95d0_0 .alias "out", 15 0, v0x16b9900_0;
+v0x16b9670_0 .net "sel", 3 0, v0x16b9a60_0; 1 drivers
+L_0x16b9b20 .part/pv L_0x16b9ea0, 0, 1, 16;
+L_0x16b9ff0 .part/pv L_0x16ba270, 1, 1, 16;
+L_0x16ba370 .part/pv L_0x16ba670, 2, 1, 16;
+L_0x16ba7b0 .part/pv L_0x16baa30, 3, 1, 16;
+L_0x16bab30 .part/pv L_0x16badb0, 4, 1, 16;
+L_0x16baeb0 .part/pv L_0x16bb1b0, 5, 1, 16;
+L_0x16bb2b0 .part/pv L_0x16bb670, 6, 1, 16;
+L_0x16bb830 .part/pv L_0x16bbb10, 7, 1, 16;
+L_0x16bbc10 .part/pv L_0x16bbe50, 8, 1, 16;
+L_0x16bbf50 .part/pv L_0x16bc1b0, 9, 1, 16;
+L_0x16bc2b0 .part/pv L_0x16bc4f0, 10, 1, 16;
+L_0x16bc5f0 .part/pv L_0x16bbff0, 11, 1, 16;
+L_0x16bc990 .part/pv L_0x16bcc10, 12, 1, 16;
+L_0x16bcd10 .part/pv L_0x16bd090, 13, 1, 16;
+L_0x16bd190 .part/pv L_0x16bd650, 14, 1, 16;
+L_0x16bb770 .part/pv L_0x16bdc10, 15, 1, 16;
+S_0x16b90d0 .scope generate, "Gates[0]" "Gates[0]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b91c8 .param/l "i" 2 33, +C4<00>;
+L_0x16b9c80 .functor XOR 4, v0x16b9a60_0, C4<0000>, C4<0000>, C4<0000>;
+L_0x16b9ea0 .functor AND 1, v0x16b97d0_0, L_0x16b9db0, C4<1>, C4<1>;
+v0x16b9280_0 .net *"_s0", 3 0, C4<0000>; 1 drivers
+v0x16b9320_0 .net *"_s2", 3 0, L_0x16b9c80; 1 drivers
+v0x16b93c0_0 .net *"_s5", 0 0, L_0x16b9db0; 1 drivers
+v0x16b9460_0 .net *"_s6", 0 0, L_0x16b9ea0; 1 drivers
+L_0x16b9db0 .reduce/and L_0x16b9c80;
+S_0x16b8c90 .scope generate, "Gates[1]" "Gates[1]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b8d88 .param/l "i" 2 33, +C4<01>;
+L_0x16ba0d0 .functor XOR 4, v0x16b9a60_0, C4<0001>, C4<0000>, C4<0000>;
+L_0x16ba270 .functor AND 1, v0x16b97d0_0, L_0x16ba180, C4<1>, C4<1>;
+v0x16b8e40_0 .net *"_s0", 3 0, C4<0001>; 1 drivers
+v0x16b8ee0_0 .net *"_s2", 3 0, L_0x16ba0d0; 1 drivers
+v0x16b8f80_0 .net *"_s5", 0 0, L_0x16ba180; 1 drivers
+v0x16b9020_0 .net *"_s6", 0 0, L_0x16ba270; 1 drivers
+L_0x16ba180 .reduce/and L_0x16ba0d0;
+S_0x16b8850 .scope generate, "Gates[2]" "Gates[2]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b8948 .param/l "i" 2 33, +C4<010>;
+L_0x16ba4e0 .functor XOR 4, v0x16b9a60_0, C4<0010>, C4<0000>, C4<0000>;
+L_0x16ba670 .functor AND 1, v0x16b97d0_0, L_0x16ba5d0, C4<1>, C4<1>;
+v0x16b8a00_0 .net *"_s0", 3 0, C4<0010>; 1 drivers
+v0x16b8aa0_0 .net *"_s2", 3 0, L_0x16ba4e0; 1 drivers
+v0x16b8b40_0 .net *"_s5", 0 0, L_0x16ba5d0; 1 drivers
+v0x16b8be0_0 .net *"_s6", 0 0, L_0x16ba670; 1 drivers
+L_0x16ba5d0 .reduce/and L_0x16ba4e0;
+S_0x16b8410 .scope generate, "Gates[3]" "Gates[3]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b8508 .param/l "i" 2 33, +C4<011>;
+L_0x16ba890 .functor XOR 4, v0x16b9a60_0, C4<0011>, C4<0000>, C4<0000>;
+L_0x16baa30 .functor AND 1, v0x16b97d0_0, L_0x16ba940, C4<1>, C4<1>;
+v0x16b85c0_0 .net *"_s0", 3 0, C4<0011>; 1 drivers
+v0x16b8660_0 .net *"_s2", 3 0, L_0x16ba890; 1 drivers
+v0x16b8700_0 .net *"_s5", 0 0, L_0x16ba940; 1 drivers
+v0x16b87a0_0 .net *"_s6", 0 0, L_0x16baa30; 1 drivers
+L_0x16ba940 .reduce/and L_0x16ba890;
+S_0x16b7fd0 .scope generate, "Gates[4]" "Gates[4]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b80c8 .param/l "i" 2 33, +C4<0100>;
+L_0x16bac10 .functor XOR 4, v0x16b9a60_0, C4<0100>, C4<0000>, C4<0000>;
+L_0x16badb0 .functor AND 1, v0x16b97d0_0, L_0x16bacc0, C4<1>, C4<1>;
+v0x16b8180_0 .net *"_s0", 3 0, C4<0100>; 1 drivers
+v0x16b8220_0 .net *"_s2", 3 0, L_0x16bac10; 1 drivers
+v0x16b82c0_0 .net *"_s5", 0 0, L_0x16bacc0; 1 drivers
+v0x16b8360_0 .net *"_s6", 0 0, L_0x16badb0; 1 drivers
+L_0x16bacc0 .reduce/and L_0x16bac10;
+S_0x16b7b90 .scope generate, "Gates[5]" "Gates[5]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b7c88 .param/l "i" 2 33, +C4<0101>;
+L_0x16bb010 .functor XOR 4, v0x16b9a60_0, C4<0101>, C4<0000>, C4<0000>;
+L_0x16bb1b0 .functor AND 1, v0x16b97d0_0, L_0x16bb0c0, C4<1>, C4<1>;
+v0x16b7d40_0 .net *"_s0", 3 0, C4<0101>; 1 drivers
+v0x16b7de0_0 .net *"_s2", 3 0, L_0x16bb010; 1 drivers
+v0x16b7e80_0 .net *"_s5", 0 0, L_0x16bb0c0; 1 drivers
+v0x16b7f20_0 .net *"_s6", 0 0, L_0x16bb1b0; 1 drivers
+L_0x16bb0c0 .reduce/and L_0x16bb010;
+S_0x16b7750 .scope generate, "Gates[6]" "Gates[6]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b7848 .param/l "i" 2 33, +C4<0110>;
+L_0x16bb460 .functor XOR 4, v0x16b9a60_0, C4<0110>, C4<0000>, C4<0000>;
+L_0x16bb670 .functor AND 1, v0x16b97d0_0, L_0x16bb5d0, C4<1>, C4<1>;
+v0x16b7900_0 .net *"_s0", 3 0, C4<0110>; 1 drivers
+v0x16b79a0_0 .net *"_s2", 3 0, L_0x16bb460; 1 drivers
+v0x16b7a40_0 .net *"_s5", 0 0, L_0x16bb5d0; 1 drivers
+v0x16b7ae0_0 .net *"_s6", 0 0, L_0x16bb670; 1 drivers
+L_0x16bb5d0 .reduce/and L_0x16bb460;
+S_0x16b7310 .scope generate, "Gates[7]" "Gates[7]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b7408 .param/l "i" 2 33, +C4<0111>;
+L_0x16bb970 .functor XOR 4, v0x16b9a60_0, C4<0111>, C4<0000>, C4<0000>;
+L_0x16bbb10 .functor AND 1, v0x16b97d0_0, L_0x16bba20, C4<1>, C4<1>;
+v0x16b74c0_0 .net *"_s0", 3 0, C4<0111>; 1 drivers
+v0x16b7560_0 .net *"_s2", 3 0, L_0x16bb970; 1 drivers
+v0x16b7600_0 .net *"_s5", 0 0, L_0x16bba20; 1 drivers
+v0x16b76a0_0 .net *"_s6", 0 0, L_0x16bbb10; 1 drivers
+L_0x16bba20 .reduce/and L_0x16bb970;
+S_0x16b6ed0 .scope generate, "Gates[8]" "Gates[8]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b6fc8 .param/l "i" 2 33, +C4<01000>;
+L_0x16bbcb0 .functor XOR 4, v0x16b9a60_0, C4<1000>, C4<0000>, C4<0000>;
+L_0x16bbe50 .functor AND 1, v0x16b97d0_0, L_0x16bbd60, C4<1>, C4<1>;
+v0x16b7080_0 .net *"_s0", 3 0, C4<1000>; 1 drivers
+v0x16b7120_0 .net *"_s2", 3 0, L_0x16bbcb0; 1 drivers
+v0x16b71c0_0 .net *"_s5", 0 0, L_0x16bbd60; 1 drivers
+v0x16b7260_0 .net *"_s6", 0 0, L_0x16bbe50; 1 drivers
+L_0x16bbd60 .reduce/and L_0x16bbcb0;
+S_0x16b6a90 .scope generate, "Gates[9]" "Gates[9]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b6b88 .param/l "i" 2 33, +C4<01001>;
+L_0x16bc0b0 .functor XOR 4, v0x16b9a60_0, C4<1001>, C4<0000>, C4<0000>;
+L_0x16bc1b0 .functor AND 1, v0x16b97d0_0, L_0x16bc110, C4<1>, C4<1>;
+v0x16b6c40_0 .net *"_s0", 3 0, C4<1001>; 1 drivers
+v0x16b6ce0_0 .net *"_s2", 3 0, L_0x16bc0b0; 1 drivers
+v0x16b6d80_0 .net *"_s5", 0 0, L_0x16bc110; 1 drivers
+v0x16b6e20_0 .net *"_s6", 0 0, L_0x16bc1b0; 1 drivers
+L_0x16bc110 .reduce/and L_0x16bc0b0;
+S_0x16b6650 .scope generate, "Gates[10]" "Gates[10]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b6748 .param/l "i" 2 33, +C4<01010>;
+L_0x16bc350 .functor XOR 4, v0x16b9a60_0, C4<1010>, C4<0000>, C4<0000>;
+L_0x16bc4f0 .functor AND 1, v0x16b97d0_0, L_0x16bc400, C4<1>, C4<1>;
+v0x16b6800_0 .net *"_s0", 3 0, C4<1010>; 1 drivers
+v0x16b68a0_0 .net *"_s2", 3 0, L_0x16bc350; 1 drivers
+v0x16b6940_0 .net *"_s5", 0 0, L_0x16bc400; 1 drivers
+v0x16b69e0_0 .net *"_s6", 0 0, L_0x16bc4f0; 1 drivers
+L_0x16bc400 .reduce/and L_0x16bc350;
+S_0x16b6210 .scope generate, "Gates[11]" "Gates[11]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b6308 .param/l "i" 2 33, +C4<01011>;
+L_0x16bc050 .functor XOR 4, v0x16b9a60_0, C4<1011>, C4<0000>, C4<0000>;
+L_0x16bbff0 .functor AND 1, v0x16b97d0_0, L_0x16bc800, C4<1>, C4<1>;
+v0x16b63c0_0 .net *"_s0", 3 0, C4<1011>; 1 drivers
+v0x16b6460_0 .net *"_s2", 3 0, L_0x16bc050; 1 drivers
+v0x16b6500_0 .net *"_s5", 0 0, L_0x16bc800; 1 drivers
+v0x16b65a0_0 .net *"_s6", 0 0, L_0x16bbff0; 1 drivers
+L_0x16bc800 .reduce/and L_0x16bc050;
+S_0x16b5dd0 .scope generate, "Gates[12]" "Gates[12]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b5ec8 .param/l "i" 2 33, +C4<01100>;
+L_0x16bca70 .functor XOR 4, v0x16b9a60_0, C4<1100>, C4<0000>, C4<0000>;
+L_0x16bcc10 .functor AND 1, v0x16b97d0_0, L_0x16bcb20, C4<1>, C4<1>;
+v0x16b5f80_0 .net *"_s0", 3 0, C4<1100>; 1 drivers
+v0x16b6020_0 .net *"_s2", 3 0, L_0x16bca70; 1 drivers
+v0x16b60c0_0 .net *"_s5", 0 0, L_0x16bcb20; 1 drivers
+v0x16b6160_0 .net *"_s6", 0 0, L_0x16bcc10; 1 drivers
+L_0x16bcb20 .reduce/and L_0x16bca70;
+S_0x16b5990 .scope generate, "Gates[13]" "Gates[13]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b5a88 .param/l "i" 2 33, +C4<01101>;
+L_0x16bcef0 .functor XOR 4, v0x16b9a60_0, C4<1101>, C4<0000>, C4<0000>;
+L_0x16bd090 .functor AND 1, v0x16b97d0_0, L_0x16bcfa0, C4<1>, C4<1>;
+v0x16b5b40_0 .net *"_s0", 3 0, C4<1101>; 1 drivers
+v0x16b5be0_0 .net *"_s2", 3 0, L_0x16bcef0; 1 drivers
+v0x16b5c80_0 .net *"_s5", 0 0, L_0x16bcfa0; 1 drivers
+v0x16b5d20_0 .net *"_s6", 0 0, L_0x16bd090; 1 drivers
+L_0x16bcfa0 .reduce/and L_0x16bcef0;
+S_0x16b5550 .scope generate, "Gates[14]" "Gates[14]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x16b5648 .param/l "i" 2 33, +C4<01110>;
+L_0x16bb390 .functor XOR 4, v0x16b9a60_0, C4<1110>, C4<0000>, C4<0000>;
+L_0x16bd650 .functor AND 1, v0x16b97d0_0, L_0x16bb4c0, C4<1>, C4<1>;
+v0x16b5700_0 .net *"_s0", 3 0, C4<1110>; 1 drivers
+v0x16b57a0_0 .net *"_s2", 3 0, L_0x16bb390; 1 drivers
+v0x16b5840_0 .net *"_s5", 0 0, L_0x16bb4c0; 1 drivers
+v0x16b58e0_0 .net *"_s6", 0 0, L_0x16bd650; 1 drivers
+L_0x16bb4c0 .reduce/and L_0x16bb390;
+S_0x165c7e0 .scope generate, "Gates[15]" "Gates[15]" 2 33, 2 33, S_0x165c690;
+ .timescale 0 0;
+P_0x1693498 .param/l "i" 2 33, +C4<01111>;
+L_0x16bda70 .functor XOR 4, v0x16b9a60_0, C4<1111>, C4<0000>, C4<0000>;
+L_0x16bdc10 .functor AND 1, v0x16b97d0_0, L_0x16bdb20, C4<1>, C4<1>;
+v0x1691c50_0 .net *"_s0", 3 0, C4<1111>; 1 drivers
+v0x16b5360_0 .net *"_s2", 3 0, L_0x16bda70; 1 drivers
+v0x16b5400_0 .net *"_s5", 0 0, L_0x16bdb20; 1 drivers
+v0x16b54a0_0 .net *"_s6", 0 0, L_0x16bdc10; 1 drivers
+L_0x16bdb20 .reduce/and L_0x16bda70;
+    .scope S_0x1670d20;
+T_0 ;
+    %set/v v0x16b9710_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x1670d20;
+T_1 ;
+    %delay 20, 0;
+    %load/v 8, v0x16b9710_0, 1;
+    %inv 8, 1;
+    %set/v v0x16b9710_0, 8, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x1670d20;
+T_2 ;
+    %vpi_call 2 70 "$dumpfile", "Decoder.vcd";
+    %vpi_call 2 71 "$dumpvars", 1'sb0, S_0x165c690;
+    %end;
+    .thread T_2;
+    .scope S_0x1670d20;
+T_3 ;
+    %delay 10, 0;
+    %set/v v0x16b99e0_0, 1, 1;
+    %set/v v0x16b97d0_0, 0, 1;
+    %delay 80, 0;
+    %set/v v0x16b99e0_0, 0, 1;
+    %set/v v0x16b97d0_0, 1, 1;
+    %set/v v0x16b9880_0, 0, 32;
+T_3.0 ;
+    %load/v 8, v0x16b9880_0, 32;
+   %cmpi/s 8, 16, 32;
+    %jmp/0xz T_3.1, 5;
+    %delay 40, 0;
+    %load/v 8, v0x16b9880_0, 32;
+    %set/v v0x16b9a60_0, 8, 4;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0x16b9880_0, 32;
+    %set/v v0x16b9880_0, 8, 32;
+    %jmp T_3.0;
+T_3.1 ;
+    %delay 80, 0;
+    %set/v v0x16b99e0_0, 0, 1;
+    %set/v v0x16b97d0_0, 0, 1;
+    %set/v v0x16b9880_0, 0, 32;
+T_3.2 ;
+    %load/v 8, v0x16b9880_0, 32;
+   %cmpi/s 8, 16, 32;
+    %jmp/0xz T_3.3, 5;
+    %delay 40, 0;
+    %load/v 8, v0x16b9880_0, 32;
+    %set/v v0x16b9a60_0, 8, 4;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0x16b9880_0, 32;
+    %set/v v0x16b9880_0, 8, 32;
+    %jmp T_3.2;
+T_3.3 ;
+    %delay 80, 0;
+    %vpi_call 2 102 "$finish";
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Decoder.sv";

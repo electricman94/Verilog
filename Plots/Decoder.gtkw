@@ -1,0 +1,46 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Thu Jun  9 04:32:55 2016
+[*]
+[dumpfile] "/media/sf_Documents/Code/Verilog/Simulations/Decoder.vcd"
+[dumpfile_mtime] "Thu Jun  9 04:32:02 2016"
+[dumpfile_size] 1611
+[savefile] "/media/sf_Documents/Code/Verilog/Plots/Decoder.gtkw"
+[timestart] 0
+[size] 1368 848
+[pos] -1 -1
+*-8.269918 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Decoder_tb.
+[sst_width] 217
+[signals_width] 102
+[sst_expanded] 1
+[sst_vpaned_height] 219
+@28
+Decoder_tb.dut.enable
+@23
+Decoder_tb.dut.sel[3:0]
+@200
+-
+@800022
+Decoder_tb.dut.out[15:0]
+@28
+(0)Decoder_tb.dut.out[15:0]
+(1)Decoder_tb.dut.out[15:0]
+(2)Decoder_tb.dut.out[15:0]
+(3)Decoder_tb.dut.out[15:0]
+(4)Decoder_tb.dut.out[15:0]
+(5)Decoder_tb.dut.out[15:0]
+(6)Decoder_tb.dut.out[15:0]
+(7)Decoder_tb.dut.out[15:0]
+(8)Decoder_tb.dut.out[15:0]
+(9)Decoder_tb.dut.out[15:0]
+(10)Decoder_tb.dut.out[15:0]
+(11)Decoder_tb.dut.out[15:0]
+(12)Decoder_tb.dut.out[15:0]
+(13)Decoder_tb.dut.out[15:0]
+(14)Decoder_tb.dut.out[15:0]
+(15)Decoder_tb.dut.out[15:0]
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
