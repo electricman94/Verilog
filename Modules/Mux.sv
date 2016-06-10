@@ -18,19 +18,21 @@ module Mux #(
   input wire [ADDR_SIZE-1:0] sel;
   input wire enable;
 
-  wire [(WIDTH*CHANNELS)-1:0] in_e;
+  wire [WIDTH-1:0] in_e [CHANNELS-1:0];
+  wire [CHANNELS-1:0] rotate [WIDTH-1:0];
   wire [CHANNELS-1:0] selected;
 
   parameter ADDR_SIZE = $clog2(CHANNELS);
 
   Decoder #(CHANNELS) dec (selected, sel, enable);
 
-  genvar i;
+  genvar i, j;
+
   generate
   for (i = 0; i < CHANNELS; i = i + 1)
   begin : Enabling
     Enabler #(WIDTH, 0) en(
-      in_e  [(WIDTH*i) +: WIDTH],
+      in_e  [i],
       in    [(WIDTH*i) +: WIDTH],
       selected[i]
     );
@@ -40,11 +42,17 @@ module Mux #(
   generate
   for (i = 0; i < CHANNELS; i = i + 1)
   begin : Rotation
-    Enabler #(WIDTH, 0) en(
-      in_e  [(WIDTH*i) +: WIDTH],
-      in    [(WIDTH*i) +: WIDTH],
-      selected[i]
-    );
+    for (j = 0; j < WIDTH; j = j + 1)
+    begin : RotationInner
+      assign rotate[j][i] = in_e [i][j];
+    end
+  end
+  endgenerate
+
+  generate
+  for (i = 0; i < WIDTH; i = i + 1)
+  begin : OrReduction
+    assign out[i] = (| rotate[i]);
   end
   endgenerate
 endmodule

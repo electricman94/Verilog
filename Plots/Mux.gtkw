@@ -1,10 +1,10 @@
 [*]
 [*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
-[*] Thu Jun  9 07:28:05 2016
+[*] Fri Jun 10 03:26:13 2016
 [*]
 [dumpfile] "/media/sf_Documents/Code/Verilog/Simulations/Mux.vcd"
-[dumpfile_mtime] "Thu Jun  9 07:27:08 2016"
-[dumpfile_size] 3146
+[dumpfile_mtime] "Fri Jun 10 03:21:19 2016"
+[dumpfile_size] 5303
 [savefile] "/media/sf_Documents/Code/Verilog/Plots/Mux.gtkw"
 [timestart] 0
 [size] 1000 600
@@ -17,14 +17,14 @@
 [treeopen] Mux_tb.dut.Enabling[2].
 [treeopen] Mux_tb.dut.Enabling[3].
 [sst_width] 217
-[signals_width] 166
+[signals_width] 205
 [sst_expanded] 1
 [sst_vpaned_height] 145
 @28
 Mux_tb.dut.enable
 @22
 Mux_tb.dut.in[31:0]
-@28
+@24
 Mux_tb.dut.sel[1:0]
 @200
 -
@@ -32,20 +32,20 @@ Mux_tb.dut.sel[1:0]
 Mux_tb.dut.selected[3:0]
 @200
 -
-@22
+@c00025
 Mux_tb.dut.out[7:0]
+@28
+(0)Mux_tb.dut.out[7:0]
+(1)Mux_tb.dut.out[7:0]
+(2)Mux_tb.dut.out[7:0]
+(3)Mux_tb.dut.out[7:0]
+(4)Mux_tb.dut.out[7:0]
+(5)Mux_tb.dut.out[7:0]
+(6)Mux_tb.dut.out[7:0]
+(7)Mux_tb.dut.out[7:0]
+@1401205
+-group_end
 @200
 -
-@201
--Enablers in Order
-@22
-Mux_tb.dut.Enabling[0].en.in[7:0]
-Mux_tb.dut.Enabling[0].en.out[7:0]
-Mux_tb.dut.Enabling[1].en.in[7:0]
-Mux_tb.dut.Enabling[1].en.out[7:0]
-Mux_tb.dut.Enabling[2].en.in[7:0]
-Mux_tb.dut.Enabling[2].en.out[7:0]
-Mux_tb.dut.Enabling[3].en.in[7:0]
-Mux_tb.dut.Enabling[3].en.out[7:0]
 [pattern_trace] 1
 [pattern_trace] 0
