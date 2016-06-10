@@ -1,0 +1,23 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri Jun 10 05:03:13 2016
+[*]
+[dumpfile] "/media/sf_Documents/Code/Verilog/Simulations/SignExt.vcd"
+[dumpfile_mtime] "Fri Jun 10 05:02:33 2016"
+[dumpfile_size] 316
+[savefile] "/media/sf_Documents/Code/Verilog/Plots/SignExtension.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-5.699765 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] SignExt_tb.
+[sst_width] 217
+[signals_width] 94
+[sst_expanded] 1
+[sst_vpaned_height] 145
+@22
+SignExt_tb.dut.in[3:0]
+@23
+SignExt_tb.dut.out[5:0]
+[pattern_trace] 1
+[pattern_trace] 0

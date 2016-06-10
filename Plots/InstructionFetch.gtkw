@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri Jun 10 06:01:43 2016
+[*]
+[dumpfile] "/media/sf_Documents/Code/Verilog/Simulations/InstructionFetch.vcd"
+[dumpfile_mtime] "Fri Jun 10 06:00:37 2016"
+[dumpfile_size] 4283
+[savefile] "/media/sf_Documents/Code/Verilog/Plots/InstructionFetch.gtkw"
+[timestart] 1451
+[size] 1368 848
+[pos] -1 -1
+*-6.410415 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] InstructionFetch_tb.
+[sst_width] 217
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 231
+@28
+InstructionFetch_tb.dut.clk
+InstructionFetch_tb.dut.reset
+InstructionFetch_tb.dut.enable
+@200
+-
+@29
+InstructionFetch_tb.dut.ctr_PC_src
+@28
+InstructionFetch_tb.dut.ctr_nop
+@200
+-
+@22
+InstructionFetch_tb.dut.PC[31:0]
+InstructionFetch_tb.dut.PCin[31:0]
+InstructionFetch_tb.dut.instruction[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

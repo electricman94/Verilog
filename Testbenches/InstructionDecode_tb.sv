@@ -1,24 +1,16 @@
-/*
-Author: Ryan Pennell
-*/
 `include "../includes.sv"
 
-module Mux_tb #(
-  parameter CHANNELS = 2,
-  parameter WIDTH = 32,
+//CPU testbench:
+module InstructionDecode_tb #(
 	parameter clock_period = 20  //50 MHz in ns timescale
 )(
 );
 	reg clk, reset, enable;
-  wire [WIDTH-1:0] out;
-  reg [WIDTH*CHANNELS-1:0] in;
-  reg [$clog2(CHANNELS)-1:0] sel;
 
-	Mux #(CHANNELS, WIDTH) dut (
-		.out												(out),
-		.in   											(in),
-    .sel                        (sel),
-		.enable											(enable)
+	InstructionDecode #() dut (
+		.clk												(clk),
+		.reset											(reset),
+		.enable											(enPC),
   );
 
   initial
@@ -34,7 +26,7 @@ module Mux_tb #(
 
   initial
   begin
-    $dumpfile("Mux.vcd");
+    $dumpfile("InstructionDecode.vcd");
     $dumpvars(0, dut);
   end
 
@@ -46,17 +38,13 @@ module Mux_tb #(
     #(clock_period / 2)
       reset = 1'b1;
       enable = 1'b0;
-      for (i = 0; i < CHANNELS; i = i + 1)
-      begin
-        in[(i*WIDTH) +: WIDTH] = CHANNELS - i;
-      end
     #(clock_period * 4);
       reset = 1'b0;
 			enable = 1'b1;
-    for (i = 0; i < CHANNELS; i = i + 1)
+    for (i = 0; i < countTo; i = i + 1)
     begin
     #(clock_period * 2)
-      sel = i;
+      //doStuff
     end
     #(clock_period * 4);
 

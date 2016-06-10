@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri Jun 10 05:00:39 2016
+[*]
+[dumpfile] "/media/sf_Documents/Code/Verilog/Simulations/Regfile.vcd"
+[dumpfile_mtime] "Fri Jun 10 04:59:04 2016"
+[dumpfile_size] 21843
+[savefile] "/media/sf_Documents/Code/Verilog/Plots/Regfile.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-7.785738 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Regfile_tb.
+[sst_width] 217
+[signals_width] 110
+[sst_expanded] 1
+[sst_vpaned_height] 145
+@28
+Regfile_tb.myModule.clk
+Regfile_tb.myModule.reset
+Regfile_tb.myModule.we
+@200
+-
+@22
+Regfile_tb.myModule.wsel[4:0]
+Regfile_tb.myModule.data[31:0]
+Regfile_tb.myModule.reg1[31:0]
+Regfile_tb.myModule.r1sel[4:0]
+Regfile_tb.myModule.reg2[31:0]
+Regfile_tb.myModule.r2sel[4:0]
+[pattern_trace] 1
+[pattern_trace] 0

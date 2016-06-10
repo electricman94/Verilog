@@ -9,9 +9,16 @@ Author: Ryan Pennell
 
 //Modules
 `include "ALU.sv"
+`include "Adder.sv"
 `include "Decoder.sv"
 `include "Enabler.sv"
+`include "InstructionFetch.sv"
+`include "Memory.sv"
+`include "MemoryAccess.sv"
 `include "Mux.sv"
 `include "Reg.sv"
+`include "Regfile.sv"
+`include "SignExtension.sv"
+`include "WriteBack.sv"
 
 `endif

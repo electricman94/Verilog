@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri Jun 10 06:37:29 2016
+[*]
+[dumpfile] "/media/sf_Documents/Code/Verilog/Simulations/MemoryAccess.vcd"
+[dumpfile_mtime] "Fri Jun 10 06:36:58 2016"
+[dumpfile_size] 3764
+[savefile] "/media/sf_Documents/Code/Verilog/Plots/MemoryAccess.gtkw"
+[timestart] 298
+[size] 1368 848
+[pos] -1 -1
+*-6.450445 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] MemoryAccess_tb.
+[sst_width] 217
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 231
+@28
+MemoryAccess_tb.dut.clk
+MemoryAccess_tb.dut.reset
+MemoryAccess_tb.dut.enable
+MemoryAccess_tb.dut.ctr_datamem_MR
+MemoryAccess_tb.dut.ctr_datamem_MW
+@22
+MemoryAccess_tb.dut.datamem_address[10:0]
+MemoryAccess_tb.dut.datamem_data[15:0]
+@23
+MemoryAccess_tb.dut.data_out[31:0]
+@22
+MemoryAccess_tb.dut.after_ext[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
